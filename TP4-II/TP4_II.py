@@ -214,8 +214,8 @@ find= False
 
 while cont_post < long_post:
     
-    comentariado = lista_de_posteos[cont_post].getComentarios()
-    duenio[cont_post]=comentariado.getOwner()
+    comentariado[cont_post] = lista_de_posteos[cont_post].getComentarios()
+    duenio[cont_post]=comentariado[cont_post].getOwner()
     if duenio.alias == dueño:
         find=True
         while cont_coment<long_comentario:
