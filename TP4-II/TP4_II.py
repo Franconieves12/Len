@@ -212,25 +212,16 @@ dueño=(input("Ingrese el Nombre del Perfil "))
 find= False
 
 
-while cont_post<long_post:
-    propietario_post=lista_de_posteos[cont_post].getOwner()
-    print(propietario_post.alias)
-    if dueño==propietario_post.alias:
-        contenido=lista_de_posteos[cont_post].getContenido()
-        
-        print("Post \n"+contenido+"\n")
-        while cont_coment<=long_comentario:
-            comentarioz=lista_de_posteos[cont_post].getComentarios()
-            due=comentarioz[0].getOwner()
-            print(due.alias)
-            while cont_perfiles<long_perfiles:
-                if dueño==due.alias:
-                    print(comentarioz[cont_perfiles].texto)
-                    print("\n")     
-                    find=True
-                cont_perfiles+=1
-            cont_coment+=1
-    cont_post+=1
+while cont_post < long_post:
+    
+    comentariado = lista_de_posteos[cont_post].getComentarios()
+    duenio[cont_post]=comentariado.getOwner()
+    if duenio.alias == dueño:
+        find=True
+        while cont_coment<long_comentario:
+            contenidoPost=lista_de_posteos[cont_post].getContenido()
+            print(contenidoPost)
+            print(comentariado.texto)
 
 if (find==False):
     print("No existe tal perfil o no posee comentarios")
